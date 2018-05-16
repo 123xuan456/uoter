@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="box" style="color:red"></p>
+    <p id="box1" style="color:rebeccapurple"></p>
+    <p id="box2" style="color:blue"></p>
+    <script>
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        // alert('是否是Android：' + isAndroid);
+        // alert('是否是iOS：' + isiOS);
+        if (isAndroid == true) {
+            console.log('安卓手机');
+            document.getElementById('box').innerText = '安卓手机'
+        }else if (isiOS == true) {
+            document.getElementById('box').innerText = '苹果手机'
+        }else if (isAndroid == false && isiOS == false) {
+            document.getElementById('box').innerText = '不是手机'
+        }
+    </script>
+
+    <script language="javascript">
+        var u = navigator.userAgent;
+        if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+            document.getElementById('box1').innerText = '安卓手机'
+            // window.location.href = "mobile/index.html";
+        } else if (u.indexOf('iPhone') > -1) {//苹果手机
+            // window.location.href = "mobile/index.html";
+            document.getElementById('box1').innerText = '苹果手机'
+        } else if (u.indexOf('Windows Phone') > -1) {//winphone手机
+            document.getElementById('box1').innerText = 'winphone手机'
+            // window.location.href = "mobile/index.html";
+        } else {
+            alert('不是手机');
+        }
+    </script>
+
+    <script>
+  
+    </script>
+
+<script> 
+        //判断数组中是否包含某字符串 
+        Array.prototype.contains = function(needle) { 
+          for (i in this) { 
+            if (this[i].indexOf(needle) > 0) 
+              return i; 
+          } 
+          return -1; 
+        } 
+        
+        var device_type = navigator.userAgent;//获取userAgent信息 
+        document.write(device_type);//打印到页面 
+        var md = new MobileDetect(device_type);//初始化mobile-detect 
+        var os = md.os();//获取系统 
+        var model = ""; 
+        if (os == "iOS") {//ios系统的处理 
+          os = md.os() + md.version("iPhone"); 
+          model = md.mobile(); 
+        } else if (os == "AndroidOS") {//Android系统的处理 
+          os = md.os() + md.version("Android"); 
+          var sss = device_type.split(";"); 
+          var i = sss.contains("Build/"); 
+          if (i > -1) { 
+            model = sss[i].substring(0, sss[i].indexOf("Build/")); 
+          } 
+        } 
+        document.getElementById('box2').innerText = (os + "---" + model);//打印系统版本和手机型号 
+      </script> 
+</body>
+
+</html>

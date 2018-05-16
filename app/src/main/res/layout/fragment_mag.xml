@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/top_bookname"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/title_black"
+        android:gravity="center"
+        android:text="消息"
+        android:textColor="@color/white" />
+    <RadioGroup
+        android:id="@+id/mag_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/title_black"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.reeching.uoter.view.CustomRadioButton
+            android:id="@+id/mag_radiobutton"
+            style="@style/TabStyle"
+            android:layout_width="0dp"
+            android:checked="true"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/rb_web_mag_bg"
+            android:text="会话" />
+
+        <com.reeching.uoter.view.CustomRadioButton
+            android:id="@+id/mag_radiobutton1"
+            style="@style/TabStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/rb_web_address_bg"
+            android:text="通讯录" />
+
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/mag_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+</LinearLayout>

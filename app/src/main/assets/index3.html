@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>这里是一个H5页面</title>
+</head>
+
+<body>
+<p id="ptext">点击按键0 执行android中的 public void click0(){} 方法</p>
+<button id="buttonId0" class="buttonClass" onclick="setRed()">按键0</button>
+<script>
+
+        function setRed() {
+            //这个方法设置 id 为 ptext 的元素的背景色为红色
+            var a = document.getElementById('ptext');
+            a.style.backgroundColor = "#F00";
+        }
+        function setColor(color,text,mode) {
+            //这个方法设置 id 为 ptext 的元素的背景色为指定颜色
+            //设置 id 为 ptext 的元素的内容为text
+            var a = document.getElementById('ptext');
+            a.innerHTML = color;
+            console.log(text)
+        }
+
+    </script>
+</body>

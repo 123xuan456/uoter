@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radiogroup"
+        android:layout_below="@+id/color"
+        android:orientation="horizontal"></FrameLayout>
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/radiogroup"
+        android:layout_below="@+id/color"
+        android:orientation="horizontal"></LinearLayout>
+
+
+    <Button
+        android:id="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="执行js方法" />
+
+    <Button
+        android:id="@+id/color1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/color"
+        android:layout_toRightOf="@+id/color"
+        android:layout_weight="1"
+        android:text="下个方法" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_above="@+id/radiogroup"
+        android:background="@color/holo_orange_light" />
+
+    <com.reeching.uoter.view.XRadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home_bill"
+            style="@style/MTabStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/rb_bill_bg"
+            android:text="账目" />
+
+        <RadioButton
+            android:id="@+id/rb_home_team"
+            style="@style/MTabStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/rb_team_bg"
+            android:text="团队" />
+
+        <RelativeLayout
+            android:id="@+id/rl_uoter"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/uoter"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/em_unread_count_bg"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="invisible" />
+            <RadioButton
+                android:id="@+id/rb_home_mag"
+                style="@style/MTabStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/rb_mag_bg"
+                android:text="消息" />
+        </RelativeLayout>
+
+        <RadioButton
+            android:id="@+id/rb_home_home"
+            style="@style/MTabStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/rb_home_bg"
+            android:text="我的" />
+
+    </com.reeching.uoter.view.XRadioGroup>
+</RelativeLayout>

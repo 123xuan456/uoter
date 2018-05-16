@@ -1,0 +1,5 @@
+<root>
+    <item name='android.service.autofill.SaveCallback'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>
