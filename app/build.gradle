@@ -24,6 +24,16 @@ android {
         // but continue the build even when errors are found:
         abortOnError false
     }
+    //设置每次运行的时候自带签名文件
+    signingConfigs{
+        key{
+            storeFile file("J:/Work/uoter/uoter.jks")
+            storePassword "reeching80"
+            keyAlias "xuan"
+            keyPassword "reeching80"
+        }
+
+    }
 
     sourceSets {
         main {

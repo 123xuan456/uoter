@@ -23,8 +23,7 @@
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -44,17 +43,15 @@
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
-
+        <!--适配全面屏-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="ratio_float"/>
         <!-- 登陆 -->
         <activity
             android:name=".ui.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateVisible" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.MainActivity"
@@ -63,7 +60,11 @@
             android:windowSoftInputMode="adjustPan"
             android:theme="@style/horizontal_slide"
            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".ui.activity.Main3Activity"
             android:screenOrientation="portrait"

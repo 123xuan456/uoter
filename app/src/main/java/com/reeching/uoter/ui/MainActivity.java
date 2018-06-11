@@ -210,14 +210,12 @@ public class MainActivity extends BaseActivity implements XRadioGroup.OnCheckedC
                 .setWebViewClient(mWebViewClient)
                 .createAgentWeb()
                 .ready()
-                .go("");
-//                .go("file:///android_asset/index.html");
+                .go("file:///android_asset/index.html");
         //注入对象
         IAgentWebSettings agentWebSettings = mAgentWeb.getAgentWebSettings();
         agentWebSettings.getWebSettings().setDomStorageEnabled(true);
 //        agentWebSettings.getWebSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         agentWebSettings.getWebSettings().setUseWideViewPort(true);
-
         agentWebSettings.getWebSettings().setLoadWithOverviewMode(true);
         agentWebSettings.getWebSettings().setAllowFileAccess(true); //允许file 协议 ， 加载本地文件
         mAgentWeb.getJsInterfaceHolder().addJavaObject("android", new AndroidInterfaceForJS(mAgentWeb, this));
@@ -247,20 +245,20 @@ public class MainActivity extends BaseActivity implements XRadioGroup.OnCheckedC
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-//            radioGroup.setVisibility(View.VISIBLE);
+            radioGroup.setVisibility(View.VISIBLE);
             LogUtils.i(url);
             LogUtils.i(view.getUrl());
-//            String url1 = view.getUrl();
-//            if (url1.indexOf("#/") != -1 && view != null) {
-//                //截取之后的字符
-//                String endUrl = url1.substring(url1.indexOf("#/"));
-//                LogUtils.i(endUrl);
-//                if ("#/".equals(endUrl)||"#/mine".equals(endUrl) || "#/index".equals(endUrl) || "#/team".equals(endUrl) || "#/account".equals(endUrl)) {
-//                    radioGroup.setVisibility(View.VISIBLE);
-//                } else {
-//                    radioGroup.setVisibility(View.GONE);
-//                }
-//            }
+            String url1 = view.getUrl();
+            if (url1.indexOf("#/") != -1 && view != null) {
+                //截取之后的字符
+                String endUrl = url1.substring(url1.indexOf("#/"));
+                LogUtils.i(endUrl);
+                if ("#/".equals(endUrl)||"#/mine".equals(endUrl) || "#/index".equals(endUrl) || "#/team".equals(endUrl) || "#/account".equals(endUrl)) {
+                    radioGroup.setVisibility(View.VISIBLE);
+                } else {
+                    radioGroup.setVisibility(View.GONE);
+                }
+            }
         }
 
         @Override
